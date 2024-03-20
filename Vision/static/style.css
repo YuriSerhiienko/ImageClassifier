@@ -1,0 +1,168 @@
+/* фон */
+body {
+    background-image: url('/static/fon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+/* фон */
+
+
+
+/* base.html */
+.header {
+    background: linear-gradient(to right, #8b4513, #32cd32);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Pacifico', cursive; /* Застосовано шрифт Pacifico */
+    font-size: 30px; /* Дещо збільшено розмір шрифту */
+    transition: color 0.3s;
+}
+
+.header a:hover {
+    color: #ffd700;
+}
+/* base.html */
+
+
+
+/* image_upload.html */
+.upload-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.upload-heading {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.upload-instructions {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.upload-form {
+    margin-bottom: 20px;
+}
+
+.upload-button {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.upload-button:hover,
+.upload-button:focus {
+    background-color: #218838;
+    outline: none;
+}
+
+.upload-form input[type="file"] {
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #666;
+    display: none;
+    margin: 10px auto 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.custom-file-upload {
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    margin: 10px auto;
+    font-size: 16px;
+}
+
+.custom-file-upload:hover {
+    background-color: #e9ecef;
+}
+
+.image-preview {
+    border: 1px dashed #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95.5%;
+}
+
+.image-preview__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+#classification-result {
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#category-text {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #495057;
+}
+
+#verification-buttons {
+    margin-top: 10px;
+}
+
+#true-button, #false-button {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#true-button {
+    background-color: #28a745;
+}
+
+#false-button {
+    background-color: #dc3545;
+}
+
+#true-button:hover {
+    background-color: #218838;
+}
+
+#false-button:hover {
+    background-color: #c82333;
+}
+
+/* image_upload.html */

@@ -1,0 +1,43 @@
+{% extends "image_classification/base.html" %}
+
+{% block content %}
+<div class="upload-container">
+  <h2 class="upload-heading">Upload your image</h2>
+  <p style="font-size: smaller;">Our model can identify the following categories from your photo: Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck. Please ensure your image is clear and well-lit for the best results.</p>
+
+  <div class="image-preview" id="imagePreview">
+    <img src="/static/standart.png" alt="Image Preview" class="image-preview__image" id="imgPreview">
+  </div>
+
+  <form method="post" enctype="multipart/form-data" class="upload-form" id="uploadForm">
+    {% csrf_token %}
+    {% for field in form %}
+      {% if field.is_hidden %}
+        {{ field }}
+      {% else %}
+        <label for="{{ field.id_for_label }}" class="custom-file-upload">
+          Choose photo
+        </label>
+        {{ field }}
+      {% endif %}
+    {% endfor %}
+    <button type="button" class="upload-button" id="submit-button" style="display: none;">Identify</button>
+  </form>
+
+  <div id="classification-result" style="display: none;">
+    <div class="classification-result">
+      <p id="category-text"></p>
+      <input type="hidden" id="image-id" value="">
+      <input type="hidden" id="image-category" value="">
+    </div>
+    <div id="verification-buttons" style="display: none;">
+      <button type="button" id="true-button">True</button>
+      <button type="button" id="false-button">False</button>
+    </div>
+  </div>
+</div>
+
+<div id="image-upload-url" data-url="{% url 'image_upload' %}" style="display:none;"></div>
+<div id="save-feedback-url" data-url="{% url 'save_feedback' %}" style="display:none;"></div>
+
+{% endblock %}
